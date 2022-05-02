@@ -11,9 +11,6 @@ html, body {
 
 .main-container {
     padding: 1em;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
 
 #search-container {
@@ -27,12 +24,17 @@ html, body {
 
 #planets {
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .planet{
     list-style-type: none;
-    display: flex;
-    flex-direction: row;
     border: 1px solid white;
     padding: 1em;
+    margin: .5em;
+}
+
+.data {
+    padding: .5em;
 }
