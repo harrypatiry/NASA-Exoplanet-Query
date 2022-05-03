@@ -11,7 +11,6 @@ search.addEventListener('keyup', (e) => {
     //console.log(filtered)
     results(filtered);
 });
-
 //fetch db
 async function cumulative() {
     const response = await fetch('../db/PS.json');

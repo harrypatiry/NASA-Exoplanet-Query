@@ -44,6 +44,14 @@ html, body {
     margin: .5em;
 }
 
+.card::before {
+    visibility: hidden;
+}
+
+.card::after {
+    visibility:visible;
+}
+
 .data {
     padding: .5em;
 }
