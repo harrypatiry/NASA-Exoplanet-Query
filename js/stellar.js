@@ -6,13 +6,13 @@ let dataArray = [];
 search.addEventListener('keyup', (e) => {
     const searched = e.target.value.toLowerCase();
     const filtered = dataArray.filter((o) => {
-        return o.pl_name.toLowerCase().includes(searched);
+        return o.pl_name.toLowerCase().includes(searched) || o.pl_hostname.toLowerCase().includes(searched);
     })
     //console.log(filtered)
     results(filtered);
 });
 
-//fetch api 
+//fetch db
 async function cumulative() {
     const response = await fetch('../db/PS.json');
     data = await response.json();
@@ -34,7 +34,12 @@ function results(filtered) {
         <li class='planet'>
             <h2>${data.pl_name}</h2>
             <div class='data'>
-                <p>Temperature(kelvin):</p>
+                <p>Mass(Jupiter Mass): ${data.pl_bmassj}</p>
+                <p>Density(g/cm**3): ${data.pl_dens}</p>
+                <p>Orbital Period: ${data.pl_orbper}</p>
+                <p>Eccentricity: ${data.pl_orbeccen}</p>
+                <p>Temperature(kelvin): ${data.pl_teff}</p>
+                <p>Stellar Name: ${data.pl_hostname}</p>
             </div>
         </li>
         `;
