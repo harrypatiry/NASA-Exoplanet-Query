@@ -31,17 +31,25 @@ cumulative();
 function results(filtered) {
     const htmlData = filtered.map((data) => {
         return `
-        <li class='planet'>
-            <h2>${data.pl_name}</h2>
-            <div class='data'>
-                <p>Mass(Jupiter Mass): ${data.pl_bmassj}</p>
-                <p>Density(g/cm**3): ${data.pl_dens}</p>
-                <p>Orbital Period: ${data.pl_orbper}</p>
-                <p>Eccentricity: ${data.pl_orbeccen}</p>
-                <p>Temperature(kelvin): ${data.pl_teff}</p>
-                <p>Stellar Name: ${data.pl_hostname}</p>
-            </div>
-        </li>
+        <div class='card'>
+            <li>
+            <h2>Planet Name: ${data.pl_name}</h2>
+                <div class='data'>
+                    <p>Mass(Jupiter Mass): ${data.pl_bmassj}</p>
+                    <p>Radius: ${data.pl_radj}</p>
+                    <p>Density(g/cm**3): ${data.pl_dens}</p>
+                    <p>Orbital Period: ${data.pl_orbper}</p>
+                    <p>Eccentricity: ${data.pl_orbeccen}</p>
+                    <br/>
+                    <h2>Stellar Name: ${data.pl_hostname}</h2>
+                    <p>Temperature(k): ${data.st_teff}</p>
+                    <p>Luminocity: ${data.st_lum}</p>
+                    <p>Mass: ${data.st_mass}</p>
+                    <p>Radius: ${data.st_rad}</p>
+                    <p>Age: ${data.st_age}</p>
+                </div>
+            </li>
+        </div>
         `;
     }).join('');
     planets.innerHTML = htmlData;

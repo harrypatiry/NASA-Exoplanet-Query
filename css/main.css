@@ -26,12 +26,18 @@ html, body {
 
 #planets {
     padding: 1em;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 90%;
 }
 
-.planet{
+.card {
+    max-width: 22em;
+}
+
+.card li{
     display: flex;
+    flex-direction: column;
     list-style-type: none;
     border: 1px solid white;
     padding: 1em;
@@ -45,4 +51,28 @@ html, body {
 .data p{
     padding: .2em;
     font-size: 16px;
+}
+
+@media only screen and (max-width: 900px) {
+    #planets {
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+    .card {
+        max-width: 22em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #planets {
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 100%;
+    }
+    .card {
+        max-width: 22em;
+    }
 }
