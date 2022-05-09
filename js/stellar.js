@@ -13,7 +13,7 @@ search.addEventListener('keyup', (e) => {
 });
 //fetch db
 async function cumulative() {
-    const response = await fetch('./db/PS.json');
+    const response = await fetch('./PS.json');
     data = await response.json();
     //filter out null name values
     dataArray = data.filter(data => {
